@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS-Game</title>
+
+</head>
+<body>
+
+    <button onclick=" PlayGame('rock') " >rock</button>
+
+    <button onclick=" PlayGame('Paper') " >Paper</button>
+
+    <button onclick=" PlayGame('Scissors')" >Scissors</button>
+
+    <button onclick=" resetScore() ">Reset Score</button>
+
+    <script>
+
+            let Score = JSON.parse(localStorage.getItem('Score'));
+
+            if(!Score){
+               Score = {
+                wins : 0,
+                Lose : 0,
+                Tie : 0
+               }
+            }
+            
+
+           
+
+                
+        function PlayGame(PlayerMove){
+
+            
+
+            const randomMove = compMove();
+               let result = '';
+
+            if( PlayerMove === 'rock'){
+                if( randomMove === 'rock'){
+                    result = 'Tie.'
+                } else if( randomMove === 'Paper'){
+                    result = 'You Lose.'
+                } else if( randomMove === 'Scissors' ){
+                    result = 'You Win.'
+                }
+            } 
+            
+            
+            
+            else if( PlayerMove === 'Paper'){
+                if( randomMove === 'rock'){
+                    result = 'You Win.'
+                } else if( randomMove === 'Paper'){
+                    result ='Tie.'
+                } else if( randomMove === 'Scissors' ){
+                    result = 'You Lose.'
+                }
+            } 
+            
+
+            
+            else if( PlayerMove === 'Scissors' ){
+                if( randomMove === 'rock'){
+                    result = 'You Lose.'
+                } else if( randomMove === 'Paper'){
+                    result = 'You Win.'
+                } else if( randomMove === 'Scissors' ){
+                    result = 'Tie.'
+                }
+            }
+
+
+            if( result === 'You Win.'){
+                Score.wins+= 1;
+            } 
+            
+            else if( result === 'You Lose.' ){
+                Score.Lose +=1;
+            } 
+            
+            else if(result === 'Tie.'){
+                Score.Tie += 1;
+            }
+
+            localStorage.setItem('Score' , JSON.stringify(Score));
+            
+            alert(`You choose ${PlayerMove} , Computer choose ${randomMove} , Hence ${result},  
+             Wins : ${Score.wins} , Lose : ${Score.Lose} , Tie : ${Score.Tie}`)
+        }
+
+
+        function compMove(){
+
+            let num = Math.random();
+            let computerMove = ''; 
+
+            if( num >= 0 && num < 1 / 2){
+                computerMove = 'rock';
+            } else if( num >= 1 / 2 && num < 2 / 3 ){
+                computerMove = 'Paper';
+            } else if( num >= 2 / 3 && num < 1 ){
+                computerMove = 'Scissors'
+            }
+
+            return computerMove
+        }
+
+       
+
+        function resetScore(){
+
+        
+            Score.wins = 0;
+            Score.Lose = 0;
+            Score.Tie = 0;
+
+            localStorage.removeItem('Score');
+
+            alert(` Score Board reset :- Wins : ${Score.wins} , Lose : ${Score.Lose} , Tie : ${Score.Tie}`)
+         }
+        
+        
+
+    </script>
+</body>
+</html>
