@@ -15,9 +15,15 @@
 
     <button onclick=" PlayGame('Scissors')" >Scissors</button>
 
+        <p class="js-Score"></p>
+        <p class="js-moves"></p>
+        <p class="js-result"></p>
+
     <button onclick=" resetScore() ">Reset Score</button>
 
     <script>
+
+            
 
             let Score = JSON.parse(localStorage.getItem('Score'));
 
@@ -28,14 +34,21 @@
                 Tie : 0
                }
             }
+
+            function updateScore(){
+                document.querySelector(".js-Score").innerHTML = `Wins : ${Score.wins} , Lose : ${Score.Lose} , Tie : ${Score.Tie}`
+            }
             
 
            
+           updateScore()
 
+           
                 
         function PlayGame(PlayerMove){
 
             
+
 
             const randomMove = compMove();
                let result = '';
@@ -89,8 +102,13 @@
 
             localStorage.setItem('Score' , JSON.stringify(Score));
             
-            alert(`You choose ${PlayerMove} , Computer choose ${randomMove} , Hence ${result},  
-             Wins : ${Score.wins} , Lose : ${Score.Lose} , Tie : ${Score.Tie}`)
+            updateScore();
+
+            document.querySelector(".js-moves").innerHTML = `You - ${PlayerMove} || Computer - ${randomMove}`
+
+            document.querySelector(".js-result").innerHTML = `Result - ${result}`
+
+           
         }
 
 
@@ -121,7 +139,7 @@
 
             localStorage.removeItem('Score');
 
-            alert(` Score Board reset :- Wins : ${Score.wins} , Lose : ${Score.Lose} , Tie : ${Score.Tie}`)
+           updateScore();
          }
         
         
