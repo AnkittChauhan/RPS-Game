@@ -22,7 +22,7 @@
         <p class="js-moves"></p>
         <p class="js-result"></p>
 
-    <button class="reset" onclick=" resetScore() ">Reset Score</button>
+    <button class="btn-reset" onclick=" resetScore()">Reset Score</button>
 
     <script>
 
@@ -116,6 +116,9 @@
            
         }
 
+        function backgroundColor(){
+            document.querySelector('btn-reset').backgroundColor = 'rgba(255, 0, 0, 0.918)';
+        }
     
 
 

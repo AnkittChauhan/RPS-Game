@@ -20,3 +20,11 @@ body{
 .result {
    height: 50px;
 }
+
+.btn-reset {
+   padding: 10px 25px;
+   background-color: black;
+   border: solid 2px;
+   color: darkgray;
+
+}
