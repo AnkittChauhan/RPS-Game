@@ -12,17 +12,17 @@
 
     <h1>Rock-Paper-Scissors Game :</h1>
 
-    <button onclick=" PlayGame('rock') " ><img class="rock" src="Rock-img.png" alt="rock sign"></button>
+    <button class="btn-rock" onclick=" PlayGame('rock') " ><img class="rock" src="Rock-img-removebg-preview.png" alt="rock sign"></button>
 
-    <button onclick=" PlayGame('Paper') " ><img class="paper" src="Paper-img.png" alt="paper sign"></button>
+    <button class="btn-paper" onclick=" PlayGame('Paper') " ><img class="paper" src="Paper-img-removebg-preview.png" alt="paper sign"></button>
 
-    <button onclick=" PlayGame('Scissors')" ><img class="scissors" src="Scissors-img.png" alt="scissors sign"></button>
+    <button class="btn-scissors" onclick=" PlayGame('Scissors')" ><img class="scissors" src="Scissors-img-removebg-preview.png" alt="scissors sign"></button>
 
         <p class="js-Score"></p>
         <p class="js-moves"></p>
         <p class="js-result"></p>
 
-    <button onclick=" resetScore() ">Reset Score</button>
+    <button class="reset" onclick=" resetScore() ">Reset Score</button>
 
     <script>
 
@@ -109,7 +109,7 @@
 
             PlayerMove = PlayerMove.toLowerCase();
 
-            document.querySelector(".js-moves").innerHTML = `You - <img class="result" src="${PlayerMove}-img.png" alt="playermove"> || Computer - <img class="result" src="${randomMove}-img.png" alt="comp move">` 
+            document.querySelector(".js-moves").innerHTML = `You - <img class="result" src="${PlayerMove}-img-removebg-preview.png" alt="playermove"> || Computer - <img class="result" src="${randomMove}-img-removebg-preview.png" alt="comp move">` 
 
             document.querySelector(".js-result").innerHTML = `Result - ${result}`
 
