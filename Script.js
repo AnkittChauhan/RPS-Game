@@ -121,5 +121,9 @@ Score.Tie = 0;
 localStorage.removeItem('Score');
 
 updateScore();
+
+
 }
+
+
 
