@@ -26,6 +26,23 @@ body{
    background-color: black;
    border: solid 2px;
    color: darkgray;
+   margin-top: 5%;
+   margin-left: 17%;
 
 }
 
+
+.div {
+
+   margin-left: 35%;
+  
+}
+
+.div_mini_h {
+   margin-top: 2%;
+   margin-left: 15%;
+}
+
+.js-result {
+   margin-left: 5%;
+}
